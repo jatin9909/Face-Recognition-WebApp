@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Face Recognition WebApp</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- Navigatio bar-->
+        <nav class="navbar navbar-dark" style="background-color:#7a2048">
+            <div class="container">
+                <a href="/" class="navbar-brand">
+                    Face Analysis
+                </a>
+
+            </div>
+        </nav>
+
+        <!--body-->
+        <div class="container">
+
+            <br>
+            <h3 class="display-11" align="center">Facial Analysis</h3>
+            <br>
+
+            <form action="#" method="POST" enctype='multipart/form-data'>
+                {% csrf_token %}   
+                
+                <div class="input-group">
+                    <label for="{{ form.image.id_for_label }}"></label>
+                    {{ form.image }}
+                    <input type="submit" value="Display Image" class="btn btn-outline-secondary">
+                </div>
+            </form>
+
+            {% if upload %}
+            <br><br>
+            <div class="row">
+                <div class="col">
+                    <img class="img-fluid" src="/media/ml_output/process.jpg" alt="">
+                </div>
+
+                <div class="col">
+                    <table class="table table-hover">
+    
+                        <tr>
+                            <td>
+                                Face
+                            </td>
+                            {% for c in results.count %}
+                                <td>
+                                    <img class="img-fluid" src="/media/ml_output/roi_{{ c }}.jpg" alt="">
+                                </td>
+                            
+                            {% endfor %}
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                Face Detection Score
+                            </td>
+                            {% for detect_score in results.face_detect_score %}
+                                <td>{{ detect_score}} </td>
+                            
+                            {% endfor %}
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                Name
+                            </td>
+                            {% for name in results.face_name %}
+                                <td>{{ name }} </td>
+                            
+                            {% endfor %}
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                Face Score
+                            </td>
+                            {% for name_score in results.face_name_score %}
+                                <td>{{ name_score}} </td>
+                            
+                            {% endfor %}
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                Emotion
+                            </td>
+                            {% for emotion in results.emotion_name %}
+                                <td>{{ emotion }} </td>
+                            
+                            {% endfor %}
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                Emotion Score
+                            </td>
+                            {% for emotion_score in results.emotion_name_score %}
+                                <td>{{ emotion_score}} </td>
+                            
+                            {% endfor %}
+                        </tr>
+    
+                    </table>
+
+                    {% endif %}
+                </div>
+                    
+    
+                
+                
+                
+            </div>
+            <hr>
+            <div class="container">
+                <footer>
+                          <div align="center">
+                            <p class="copyright-text">Developed by <b>Jatin</b>, Mail any query at <b>jatin.dhar27@gmail.com</b>
+                            </p>
+                            <p></p>
+                          </div>
+
+                </footer>
+            </div>
+            </div>
+
+
+            
+        
+
+    </body>
+</html>
