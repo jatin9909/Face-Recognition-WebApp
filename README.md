@@ -1,4 +1,4 @@
-# Face-Recognition-WebApp (under construction)
+# Face-Recognition-WebApp
 A Facial Analysis Web-App deployed live on Heroku.
 
 This is a Facial Analysis WebApp build with the help of Django and Deep Neural Networks. 
