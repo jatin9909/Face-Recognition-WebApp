@@ -28,7 +28,7 @@ This is a Facial Analysis WebApp build with the help of Django and Deep Neural N
 -  Emotion Name (Angry, Disgust, Fear, Happy, Neutral, Sad, Surprise)
 -  Emotion Score (how accurately we have detected the emotion score)
 
-## Steps to run
+## Steps to run on your local machine
 1. Clone this repo
 ```
 https://github.com/jatin9909/Face-Recognition-WebApp.git
