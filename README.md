@@ -5,7 +5,7 @@ This is a Facial Analysis WebApp build with the help of Django and Deep Neural N
 
 ## Features
 - This WebApp crop the face from the picture.
-- Compute the face detection score using (0 to 1) which tells that we have detect the face correct from the image. 
+- Compute the face detection score which tells that we have detect the face correct from the image. 
 - Name of the person in the picture. <br> This WebApp can only tell the name of few celebrities since the model is trained only on given list of celebrities. <br> 
   <ul>
   <li>Aamir khan</li>
@@ -24,9 +24,9 @@ This is a Facial Analysis WebApp build with the help of Django and Deep Neural N
   <li>Scarlett Johansson</li>
   <li>Tom Cruise</li>
   </ul>
--  Face Name score
+-  Face Name score (Analyse the name of the person based on the images on which it has trained)
 -  Emotion Name (Angry, Disgust, Fear, Happy, Neutral, Sad, Surprise)
--  Emotion Score
+-  Emotion Score (how accurately we have deteced the emotion score)
 
 ## Steps to run
 1. Clone this repo
