@@ -26,7 +26,7 @@ This is a Facial Analysis WebApp build with the help of Django and Deep Neural N
   </ul>
 -  Face Name score (Analyse the name of the person based on the images on which it has trained)
 -  Emotion Name (Angry, Disgust, Fear, Happy, Neutral, Sad, Surprise)
--  Emotion Score (how accurately we have deteced the emotion score)
+-  Emotion Score (how accurately we have detected the emotion score)
 
 ## Steps to run
 1. Clone this repo
